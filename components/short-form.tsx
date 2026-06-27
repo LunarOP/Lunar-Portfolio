@@ -12,8 +12,8 @@ const shorts = [
     title: "$1 vs $100 Case Opening!",
   },
   {
-    videoId: "5YtHAWZ--d4",
-    title: "Why 4K Monitors Are Not Worth It",
+    videoId: "IH7f7oQ0s3A",
+    title: "The Best Uncle Ever 😍❤",
   },
 ]
 
@@ -41,7 +41,16 @@ export async function ShortForm() {
   const items = await getShortsWithAuthors()
 
   return (
-    <section id="shorts" className="py-20 px-4 bg-card/50">
+    <section
+      id="shorts"
+      className="py-20 px-4 border-y border-amber-500/10"
+      style={{
+        background: "rgba(12, 10, 7, 0.45)",
+        backdropFilter: "blur(30px) saturate(180%)",
+        WebkitBackdropFilter: "blur(30px) saturate(180%)",
+        boxShadow: "inset 0 1px 0 rgba(229, 184, 66, 0.05), 0 8px 32px rgba(0, 0, 0, 0.6)",
+      }}
+    >
       <h2
         className="text-center text-3xl font-bold mb-14 md:text-4xl bg-gradient-to-r from-amber-100 via-amber-200 to-amber-400 bg-clip-text text-transparent"
         style={{ fontFamily: 'var(--font-montserrat)' }}
@@ -53,7 +62,7 @@ export async function ShortForm() {
         {items.map((short) => (
           <div
             key={short.videoId}
-            className="group flex flex-col overflow-hidden rounded-[24px] border border-white/12 bg-black/40 shadow-[0_14px_40px_rgba(0,0,0,0.85)] transition-transform transition-shadow duration-300 will-change-transform hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(0,0,0,0.95)]"
+            className="group flex flex-col overflow-hidden rounded-[24px] border border-amber-500/15 bg-black/40 shadow-[0_14px_40px_rgba(0,0,0,0.85)] transition-transform transition-shadow duration-300 will-change-transform hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(0,0,0,0.95)]"
           >
             <div className="relative aspect-[9/16]">
               <iframe

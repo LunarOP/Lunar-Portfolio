@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk, Montserrat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SparklesBackground } from '@/components/sparkles-background'
+import { ClickEffect } from '@/components/click-effect'
 import './globals.css'
 
 const inter = Inter({
@@ -39,6 +41,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${montserrat.variable} font-sans antialiased`}>
+        <ClickEffect />
+        <SparklesBackground />
         {children}
         <Analytics />
       </body>

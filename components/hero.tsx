@@ -5,7 +5,13 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4 pt-20">
       {/* Background image */}
-      <div className="absolute inset-0 z-0">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%)"
+        }}
+      >
         <Image
           src="/images/hero-bg.jpg"
           alt=""
@@ -13,7 +19,7 @@ export function Hero() {
           className="object-cover opacity-70"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
       </div>
 
       {/* Content */}

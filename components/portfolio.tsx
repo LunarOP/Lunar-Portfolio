@@ -55,11 +55,11 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     type: "youtube" as const,
-    videoId: "A74eaILlkUw",
-    title: "Quasar Store Highlight",
+    videoId: "lfrn6IoLOiU",
+    title: "NeverCashOut Highlight",
     testimonial: {
-      name: "Quasar Store",
-      avatar: "/images/quasar-logo.jpg",
+      name: "NeverCashOut",
+      avatar: "/images/nevercashout-logo.jpg",
       text: "Amazing work as always!",
     },
   },
@@ -83,7 +83,7 @@ export function Portfolio() {
               }`}
           >
             {/* Video / Embed */}
-            <div className="relative flex-1 overflow-hidden rounded-[24px] border border-white/12 bg-black/40 shadow-[0_16px_45px_rgba(0,0,0,0.8)] transition-transform transition-shadow duration-300 will-change-transform group-hover:-translate-y-2 group-hover:shadow-[0_26px_80px_rgba(0,0,0,0.95)]">
+            <div className="relative flex-1 overflow-hidden rounded-[24px] border border-amber-500/15 bg-black/40 shadow-[0_16px_45px_rgba(0,0,0,0.8)] transition-transform transition-shadow duration-300 will-change-transform group-hover:-translate-y-2 group-hover:shadow-[0_26px_80px_rgba(0,0,0,0.95)]">
               <div className="aspect-video relative">
                 {item.type === "youtube" ? (
                   <iframe

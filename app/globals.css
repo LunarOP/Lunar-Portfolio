@@ -4,39 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #000000;
-  --foreground: #f5f5f5;
-  --card: #141414;
-  --card-foreground: #f5f5f5;
-  --popover: #141414;
-  --popover-foreground: #f5f5f5;
-  --primary: #f59e0b;
-  --primary-foreground: #000000;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #f5f5f5;
-  --muted: #1a1a1a;
-  --muted-foreground: #a1a1a1;
-  --accent: #f59e0b;
-  --accent-foreground: #000000;
+  --background: #070503;
+  --foreground: #f6efe5;
+  --card: #130f0a;
+  --card-foreground: #f6efe5;
+  --popover: #130f0a;
+  --popover-foreground: #f6efe5;
+  --primary: #e5b842;
+  --primary-foreground: #070503;
+  --secondary: #1c160f;
+  --secondary-foreground: #eedecc;
+  --muted: #1c160f;
+  --muted-foreground: #9e917d;
+  --accent: #fbbf24;
+  --accent-foreground: #070503;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
-  --ring: #f59e0b;
-  --chart-1: #f59e0b;
+  --border: #362c1f;
+  --input: #362c1f;
+  --ring: #fbbf24;
+  --chart-1: #e5b842;
   --chart-2: #d97706;
   --chart-3: #b45309;
   --chart-4: #fbbf24;
   --chart-5: #fcd34d;
   --radius: 0.625rem;
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #1a1a1a;
-  --sidebar-accent-foreground: #f5f5f5;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #f59e0b;
+  --sidebar: #0a0806;
+  --sidebar-foreground: #f6efe5;
+  --sidebar-primary: #e5b842;
+  --sidebar-primary-foreground: #070503;
+  --sidebar-accent: #1c160f;
+  --sidebar-accent-foreground: #f6efe5;
+  --sidebar-border: #362c1f;
+  --sidebar-ring: #fbbf24;
 }
 
 @theme inline {
@@ -88,6 +88,103 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #050403;
+    background-image: 
+      radial-gradient(circle at 50% 0vh, rgba(229, 184, 66, 0.14) 0%, transparent 60%),
+      radial-gradient(circle at 100% 30vh, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 0% 70vh, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100vh, rgba(229, 184, 66, 0.14) 0%, transparent 60%),
+      linear-gradient(to bottom, #070503, #040302);
+    background-attachment: fixed;
+    @apply text-foreground;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Ensure main content is above the glow and sparkles */
+  main, header, footer, nav {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* ── Golden halo around sections ── */
+  section {
+    position: relative;
+  }
+  section::before {
+    content: '';
+    position: absolute;
+    inset: -20px -40px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 2rem;
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 50%,
+      rgba(229, 184, 66, 0.04) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  section:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Subtle golden glow on cards, iframes, videos ── */
+  iframe,
+  video,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-3xl {
+    position: relative;
+  }
+}
+
+/* Golden shimmer for embedded content */
+iframe {
+  box-shadow: 0 0 45px rgba(229, 184, 66, 0.12), 0 0 90px rgba(229, 184, 66, 0.06);
+}
+
+/* Subtle golden border glow on card-like containers */
+[class*="border"][class*="rounded"] {
+  box-shadow: 0 0 35px rgba(229, 184, 66, 0.08), 0 0 70px rgba(229, 184, 66, 0.04);
+}
+
+/* Remove glow from accordion triggers */
+[data-slot="accordion-trigger"] {
+  box-shadow: none !important;
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* ── Click Ripple Effect Keyframes ── */
+@keyframes click-ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.9;
+    border-width: 3px;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    border-width: 0.5px;
   }
 }

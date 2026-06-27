@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 
 const stats = [
-  { value: 200, suffix: "+", label: "Videos Edited" },
-  { value: 10, suffix: "M+", label: "Views Generated" },
-  { value: 10, suffix: "+", label: "Creators Worked With" },
+  { value: 300, suffix: "+", label: "Videos Edited" },
+  { value: 20, suffix: "M+", label: "Views Generated" },
+  { value: 15, suffix: "+", label: "Creators Worked With" },
   { value: 5, suffix: "+", label: "Years Experience" },
 ]
 
@@ -58,7 +58,7 @@ export function Stats() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="flex flex-col items-center text-center rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform transition-shadow duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.7)]"
+            className="flex flex-col items-center text-center rounded-2xl border border-amber-500/10 bg-amber-500/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform transition-shadow duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.7)]"
           >
             <AnimatedNumber target={stat.value} suffix={stat.suffix} />
             <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>

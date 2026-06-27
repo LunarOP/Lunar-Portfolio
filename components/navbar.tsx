@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Portfolio", href: "#portfolio" },
   { label: "Shorts", href: "#shorts" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#work-together" },
   { label: "FAQs", href: "#faq" },
 ]
 
@@ -69,12 +68,12 @@ export function Navbar() {
         <nav
           className="w-full rounded-full flex items-center justify-between gap-4 px-4 py-2.5 min-h-[52px]"
           style={{
-            background: "rgba(0, 0, 0, 0.45)",
-            backdropFilter: "saturate(180%) blur(20px)",
-            WebkitBackdropFilter: "saturate(180%) blur(20px)",
-            border: "1px solid rgba(255, 255, 255, 0.08)",
+            background: "rgba(12, 10, 7, 0.5)",
+            backdropFilter: "blur(28px) saturate(180%)",
+            WebkitBackdropFilter: "blur(28px) saturate(180%)",
+            border: "1px solid rgba(229, 184, 66, 0.18)",
             boxShadow:
-              "0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+              "0 4px 24px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(229, 184, 66, 0.15), -1.5px -0.5px 2px rgba(245, 158, 11, 0.25), 1.5px 0.5px 2px rgba(229, 184, 66, 0.25)",
           }}
         >
           <a href="#" className="flex items-center gap-2 shrink-0">
@@ -107,6 +106,17 @@ export function Navbar() {
             ))}
           </ul>
 
+          {/* Desktop Nav Button */}
+          <div className="hidden md:block shrink-0">
+            <a
+              href="#work-together"
+              onClick={handleNavClick("#work-together")}
+              className="text-xs font-bold text-neutral-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 rounded-full px-5 py-2 hover:from-amber-200 hover:to-amber-400 transition-all duration-300 shadow-[0_0_12px_rgba(245,158,11,0.45)] hover:shadow-[0_0_20px_rgba(245,158,11,0.7)]"
+            >
+              BOOK CALL
+            </a>
+          </div>
+
           {/* Mobile Toggle */}
           <button
             className="md:hidden text-foreground p-1"
@@ -122,12 +132,12 @@ export function Navbar() {
           <div
             className="w-full rounded-2xl overflow-hidden md:hidden"
             style={{
-              background: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "saturate(180%) blur(20px)",
-              WebkitBackdropFilter: "saturate(180%) blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.08)",
+              background: "rgba(12, 10, 7, 0.5)",
+              backdropFilter: "blur(28px) saturate(180%)",
+              WebkitBackdropFilter: "blur(28px) saturate(180%)",
+              border: "1px solid rgba(229, 184, 66, 0.18)",
               boxShadow:
-                "0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+                "0 4px 24px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(229, 184, 66, 0.15), -1.5px -0.5px 2px rgba(245, 158, 11, 0.25), 1.5px 0.5px 2px rgba(229, 184, 66, 0.25)",
             }}
           >
             <ul className="flex flex-col items-center gap-1 py-4 px-2">

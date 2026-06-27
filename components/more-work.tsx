@@ -27,7 +27,7 @@ export function MoreWork() {
         {works.map((work) => (
           <div
             key={work.videoId}
-            className="group flex flex-col overflow-hidden rounded-[24px] border border-white/12 bg-black/40 shadow-[0_14px_40px_rgba(0,0,0,0.85)] transition-transform transition-shadow duration-300 will-change-transform hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(0,0,0,0.95)]"
+            className="group flex flex-col overflow-hidden rounded-[24px] border border-amber-500/15 bg-black/40 shadow-[0_14px_40px_rgba(0,0,0,0.85)] transition-transform transition-shadow duration-300 will-change-transform hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(0,0,0,0.95)]"
           >
             <div className="overflow-hidden rounded-[24px]">
               <div className="aspect-video relative">
@@ -41,7 +41,7 @@ export function MoreWork() {
                 />
               </div>
             </div>
-            <h3 className="mt-3 px-1 pb-2 text-sm font-medium text-foreground line-clamp-2">
+            <h3 className={`mt-3 px-5 pb-4 font-medium text-foreground line-clamp-2 ${work.title.length > 40 ? "text-xs" : "text-sm"}`}>
               {work.title}
             </h3>
           </div>
