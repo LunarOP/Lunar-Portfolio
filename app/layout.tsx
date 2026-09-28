@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'Lunar | Professional Video Editor',
-  description: 'Professional video editing services for YouTube creators, gaming channels, and documentaries. 300+ videos edited, 20M+ views generated.',
+  description: 'Professional video editing services for YouTube creators, gaming channels, and documentaries. 500+ videos edited, 100M+ views generated.',
   icons: {
     icon: '/icon.png',
     apple: '/apple-icon.png',
